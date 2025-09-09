@@ -33,7 +33,9 @@ $pages = $pdo->query('SELECT * FROM tb_pagina_afiliados')->fetchAll();
 <td><?= htmlspecialchars($page['slug']) ?></td>
 <td>
 <a class='btn btn-sm btn-primary' href='page.php?id=<?= $page['id'] ?>'>Gerenciar produtos</a>
-<a class='btn btn-sm btn-secondary' href='../page.php?slug=<?= $page['slug'] ?>' target='_blank'>Ver</a>
+
+<a class='btn btn-sm btn-secondary' href='../public/page.php?slug=<?= $page['slug'] ?>' target='_blank'>Ver</a>
+
 </td>
 </tr>
 <?php endforeach; ?>
