@@ -43,12 +43,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_product'])) {
     }
 }
 
-$pages = $pdo->query('SELECT id, titulo FROM tb_pagina_afiliados ORDER BY titulo')->fetchAll(PDO::FETCH_ASSOC);
-$products = $pdo->query('SELECT pr.id, pr.nome, pr.url_afiliado, pr.preco, pr.imagem, pa.titulo AS page_title
+// Retrieve pages; if the `id` column is absent (older schema) fall back to `pagina_id`
+try {
+    $pages = $pdo->query('SELECT id, titulo FROM tb_pagina_afiliados ORDER BY titulo')->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    $pages = $pdo->query('SELECT pagina_id AS id, titulo FROM tb_pagina_afiliados ORDER BY titulo')->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Retrieve products and join pages, accommodating either `id` or `pagina_id`
+try {
+    $products = $pdo->query('SELECT pr.id, pr.nome, pr.url_afiliado, pr.preco, pr.imagem, pa.titulo AS page_title
                           FROM tb_produto pr
                           JOIN tb_pagina_produto pp ON pr.id = pp.produto_id
                           JOIN tb_pagina_afiliados pa ON pp.pagina_id = pa.id
                           ORDER BY pr.id DESC')->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    $products = $pdo->query('SELECT pr.id, pr.nome, pr.url_afiliado, pr.preco, pr.imagem, pa.titulo AS page_title
+                          FROM tb_produto pr
+                          JOIN tb_pagina_produto pp ON pr.id = pp.produto_id
+                          JOIN tb_pagina_afiliados pa ON pp.pagina_id = pa.pagina_id
+                          ORDER BY pr.id DESC')->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
