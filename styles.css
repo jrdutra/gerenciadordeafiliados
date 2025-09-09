@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefcfb;
+  color: #2c2c2c;
+  padding: 20px;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #2c2c2c;
+}
+
+.container {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #6f5d90;
+  line-height: 1.2;
+}
+
+h1 span {
+  display: block;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin: 10px 0 30px;
+}
+
+.headline-section h2,
+.about-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.description,
+.about-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.cta {
+  background-color: #8c7dbf;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta:hover {
+  background-color: #7a6ab0;
+}
+
+/* Additional styles for product pages */
+.product {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.product h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #6f5d90;
+}
+
+.product p {
+  margin-bottom: 10px;
+}
+
+.page-qr {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.qr {
+  margin-top: 10px;
+}
+
+/* Styles for admin forms and tables */
+form {
+  margin-bottom: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #eee;
+}
+
+img {
+  max-width: 100%;
+}
+
+table img {
+  max-width: 100px;
+}
