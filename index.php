@@ -2,7 +2,7 @@
 // Simple affiliate page display without frameworks or composer
 // Adjust database credentials as needed
 $host = 'localhost';
-$db   = 'afiliados';
+$db   = 'gerenciadordeafiliados';
 $user = 'root';
 $pass = '';
 
