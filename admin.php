@@ -137,7 +137,7 @@ try {
                 <td><?= htmlspecialchars($prod['page_title']) ?></td>
                 <td><?= htmlspecialchars($prod['nome']) ?></td>
                 <td>R$ <?= number_format($prod['preco'], 2, ',', '.') ?></td>
-                <td><?php if ($prod['imagem']): ?><img src="<?= $prod['imagem'] ?>" alt="<?= htmlspecialchars($prod['nome']) ?>"><?php endif; ?></td>
+                <td><?php if ($prod['imagem']): ?><img src="<?= htmlspecialchars($prod['imagem']) ?>" alt="<?= htmlspecialchars($prod['nome']) ?>"><?php endif; ?></td>
                 <td><a href="<?= htmlspecialchars($prod['url_afiliado']) ?>" target="_blank">Link</a></td>
                 <td><img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=<?= urlencode($prod['url_afiliado']) ?>" alt="QR"></td>
             </tr>

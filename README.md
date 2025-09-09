@@ -17,7 +17,7 @@ CREATE TABLE tb_produto (
     nome VARCHAR(255) NOT NULL,
     url_afiliado TEXT NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
-    imagem VARCHAR(255) DEFAULT NULL
+    imagem LONGTEXT DEFAULT NULL
 );
 
 CREATE TABLE tb_pagina_produto (

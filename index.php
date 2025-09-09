@@ -55,7 +55,7 @@ $pageUrl = $baseUrl . '?slug=' . urlencode($page['slug']);
     <?php foreach ($products as $prod): ?>
         <div class="product">
             <?php if ($prod['imagem']): ?>
-                <img src="<?= $prod['imagem'] ?>" alt="<?= htmlspecialchars($prod['nome']) ?>">
+                <img src="<?= htmlspecialchars($prod['imagem']) ?>" alt="<?= htmlspecialchars($prod['nome']) ?>">
             <?php endif; ?>
             <h2><?= htmlspecialchars($prod['nome']) ?></h2>
             <p><strong>Preço:</strong> R$ <?= number_format($prod['preco'], 2, ',', '.') ?></p>
