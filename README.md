@@ -21,3 +21,6 @@ php -S localhost:8000 -t .
 ```
 
 Acesse `/admin/index.php` para gerenciar as páginas e produtos.
+
+A página pública inicial está em `index.php` e páginas geradas são acessadas em `page.php?slug=SEU_SLUG`.
+
